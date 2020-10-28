@@ -19,11 +19,20 @@
           </div>
           <div class="product-info">
             <h1>{{ product }}</h1>
+
             <!-- <p v-show="inStock">In Stock</p> -->
-            <p v-if="inventory > 10">In Stock</p>
+            <!-- <p v-if="inventory > 10">In Stock</p>
             <p v-else-if="inventory <= 10 && inventory >0">Almost sold out</p>
             <p v-else>Out of Stock</p>
-            <p v-show="onSale">On Sale</p>
+            <p v-show="onSale">On Sale</p> -->
+
+            <!-- List Rendering -->
+            <ul>
+              <li v-for="detail in details" :key="variant.id"> {{ detail }} </li>
+            </ul>
+            <div v-for="variant in variants">
+              {{ variant.color}}
+            </div>
           </div>
         </div>
       </div>
